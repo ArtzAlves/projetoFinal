@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Análise de Dados e Insights - Vendrâmico. Transforme dados em decisões estratégicas com IA. Modelagem preditiva, visualização interativa e insights acionáveis para seu negócio.">
+    <meta name="keywords" content="análise de dados, insights, IA, business intelligence, modelagem preditiva, dashboards, visualização de dados">
+    <meta name="author" content="Vendrâmico">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Análise de Dados e Insights - Vendrâmico">
+    <meta property="og:description" content="Transforme dados em decisões estratégicas com soluções de IA para análise e insights. Modelagem preditiva e visualização interativa para seu negócio.">
+    <meta property="og:image" content="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1200">
+    <meta property="og:type" content="website">
+    
+    <title>Análise de Dados e Insights - Vendrâmico</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Logo -->
+                <a href="index.html" class="header__logo">
+                    <div class="header__logo-icon">🤖</div>
+                    <span class="header__logo-text">Vendrâmico</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="header__nav" id="nav-menu">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a href="index.html#produtos" class="header__nav-link">Produtos</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="index.html#como-funciona" class="header__nav-link">Como Funciona</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="index.html#beneficios" class="header__nav-link">Benefícios</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="index.html#contato" class="header__nav-link">Contato</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- CTA Button -->
+                <div class="header__cta">
+                    <a href="#contato" class="btn btn-secondary">Começar Agora</a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="header__mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                    <span class="header__hamburger-line"></span>
+                    <span class="header__hamburger-line"></span>
+                    <span class="header__hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="container">
+                <div class="hero-section__content">
+                    <h1 class="hero-section__title">
+                        Análise de Dados e Insights: 
+                        <span class="hero-section__title-highlight">Transforme Dados em Decisões Estratégicas</span>
+                    </h1>
+                    
+                    <p class="hero-section__subtitle">
+                        Desvende o verdadeiro potencial dos seus dados com nossas soluções de IA para análise e insights. 
+                        Transformamos grandes volumes de informações em inteligência acionável, permitindo que você tome 
+                        decisões estratégicas mais informadas, identifique oportunidades e otimize seus resultados de negócio.
+                    </p>
+                    
+                    <div class="hero-section__cta">
+                        <a href="#funcionalidades" class="btn btn-primary">Conheça as Funcionalidades</a>
+                        <a href="#como-funciona" class="btn btn-secondary">Como Funciona</a>
+                    </div>
+                    
+                    <!-- Social Proof Stats -->
+                    <div class="hero-section__stats">
+                        <div class="hero-section__stat-card">
+                            <div class="stat-card__icon" aria-hidden="true">📊</div>
+                            <div class="stat-card__content">
+                                <span class="stat-card__number">95%</span>
+                                <span class="stat-card__label">Precisão em Previsões</span>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-section__stat-card">
+                            <div class="stat-card__icon" aria-hidden="true">⚡</div>
+                            <div class="stat-card__content">
+                                <span class="stat-card__number">70%</span>
+                                <span class="stat-card__label">Redução no Tempo de Análise</span>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-section__stat-card">
+                            <div class="stat-card__icon" aria-hidden="true">🎯</div>
+                            <div class="stat-card__content">
+                                <span class="stat-card__number">85%</span>
+                                <span class="stat-card__label">Melhoria na Tomada de Decisão</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Funcionalidades e Benefícios Section -->
+        <section class="benefits-section" id="funcionalidades">
+            <div class="container">
+                <h2 class="section-title">Funcionalidades e Benefícios</h2>
+                <p class="section-subtitle">
+                    Nossa solução de análise de dados oferece recursos avançados que transformam informações brutas em insights estratégicos
+                </p>
+                
+                <div class="benefits-grid grid grid-3">
+                    <!-- Visualização Interativa -->
+                    <article class="benefit-card card">
+                        <div class="benefit-card__icon" aria-hidden="true">📈</div>
+                        <h3 class="benefit-card__title">Visualização Interativa</h3>
+                        <p class="benefit-card__description">
+                            Dashboards e relatórios intuitivos que facilitam a compreensão de dados complexos, 
+                            permitindo exploração interativa e análise visual em tempo real.
+                        </p>
+                    </article>
+                    
+                    <!-- Modelagem Preditiva -->
+                    <article class="benefit-card card">
+                        <div class="benefit-card__icon" aria-hidden="true">🔮</div>
+                        <h3 class="benefit-card__title">Modelagem Preditiva</h3>
+                        <p class="benefit-card__description">
+                            Preveja tendências futuras, comportamentos de clientes e resultados de mercado com alta 
+                            precisão, utilizando algoritmos avançados de machine learning.
+                        </p>
+                    </article>
+                    
+                    <!-- Identificação de Padrões -->
+                    <article class="benefit-card card">
+                        <div class="benefit-card__icon" aria-hidden="true">🔍</div>
+                        <h3 class="benefit-card__title">Identificação de Padrões</h3>
+                        <p class="benefit-card__description">
+                            Descubra correlações e padrões ocultos em seus dados que podem impulsionar novas 
+                            estratégias e revelar oportunidades de negócio inexploradas.
+                        </p>
+                    </article>
+                    
+                    <!-- Otimização de Processos -->
+                    <article class="benefit-card card">
+                        <div class="benefit-card__icon" aria-hidden="true">⚙️</div>
+                        <h3 class="benefit-card__title">Otimização de Processos</h3>
+                        <p class="benefit-card__description">
+                            Identifique gargalos e ineficiências em suas operações, otimizando fluxos de trabalho 
+                            e recursos para máxima eficiência operacional.
+                        </p>
+                    </article>
+                    
+                    <!-- Personalização de Ofertas -->
+                    <article class="benefit-card card">
+                        <div class="benefit-card__icon" aria-hidden="true">🎨</div>
+                        <h3 class="benefit-card__title">Personalização de Ofertas</h3>
+                        <p class="benefit-card__description">
+                            Utilize insights de dados para criar ofertas e experiências altamente personalizadas 
+                            para seus clientes, aumentando conversão e satisfação.
+                        </p>
+                    </article>
+                    
+                    <!-- Tomada de Decisão Acelerada -->
+                    <article class="benefit-card card">
+                        <div class="benefit-card__icon" aria-hidden="true">⚡</div>
+                        <h3 class="benefit-card__title">Tomada de Decisão Acelerada</h3>
+                        <p class="benefit-card__description">
+                            Tenha acesso rápido a informações cruciais para decisões ágeis e baseadas em evidências, 
+                            reduzindo tempo de resposta e aumentando competitividade.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Como Funciona Section -->
+        <section class="how-it-works-section" id="como-funciona">
+            <div class="container">
+                <h2 class="section-title">Como Funciona</h2>
+                <p class="section-subtitle">
+                    Nosso processo estruturado garante a implementação perfeita da sua solução de análise de dados
+                </p>
+                
+                <div class="steps-grid grid grid-4">
+                    <!-- Step 1 -->
+                    <div class="step-card">
+                        <span class="step-card__number" aria-label="Passo 1">1</span>
+                        <h3 class="step-card__title">Coleta e Preparação de Dados</h3>
+                        <p class="step-card__description">
+                            Auxiliamos na coleta, limpeza e organização de seus dados de diversas fontes, 
+                            garantindo qualidade e consistência para análises precisas.
+                        </p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="step-card">
+                        <span class="step-card__number" aria-label="Passo 2">2</span>
+                        <h3 class="step-card__title">Desenvolvimento de Modelos de IA</h3>
+                        <p class="step-card__description">
+                            Criamos e treinamos modelos de IA para realizar análises preditivas, descritivas 
+                            e prescritivas específicas para suas necessidades de negócio.
+                        </p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="step-card">
+                        <span class="step-card__number" aria-label="Passo 3">3</span>
+                        <h3 class="step-card__title">Implementação de Dashboards</h3>
+                        <p class="step-card__description">
+                            Desenvolvemos plataformas de visualização de dados personalizadas e integradas 
+                            aos seus sistemas existentes para acesso fácil e intuitivo.
+                        </p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="step-card">
+                        <span class="step-card__number" aria-label="Passo 4">4</span>
+                        <h3 class="step-card__title">Treinamento e Suporte</h3>
+                        <p class="step-card__description">
+                            Capacitamos sua equipe para utilizar as ferramentas e oferecemos suporte contínuo 
+                            para otimização e evolução das análises.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Casos de Uso Section -->
+        <section class="products-section" id="casos-uso">
+            <div class="container">
+                <h2 class="section-title">Casos de Uso</h2>
+                <p class="section-subtitle">
+                    Veja como nossa solução de análise de dados pode ser aplicada em diferentes áreas do seu negócio
+                </p>
+                
+                <div class="products-grid grid grid-3">
+                    <!-- Business Intelligence -->
+                    <article class="product-card card">
+                        <div class="product-card__icon">
+                            <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Business Intelligence" class="product-card__icon-img">
+                        </div>
+                        <h3 class="product-card__title">Business Intelligence</h3>
+                        <p class="product-card__description">
+                            Dashboards executivos com KPIs em tempo real, análise de performance e relatórios 
+                            automatizados para tomada de decisão estratégica.
+                        </p>
+                        <ul class="product-card__features">
+                            <li>KPIs em tempo real</li>
+                            <li>Relatórios automatizados</li>
+                            <li>Análise de performance</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-secondary product-card__cta">Saiba Mais</a>
+                    </article>
+                    
+                    <!-- Análise de Mercado -->
+                    <article class="product-card card">
+                        <div class="product-card__icon">
+                            <img src="https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Análise de Mercado" class="product-card__icon-img">
+                        </div>
+                        <h3 class="product-card__title">Análise de Mercado</h3>
+                        <p class="product-card__description">
+                            Monitoramento de tendências, análise competitiva e previsão de demanda para 
+                            posicionamento estratégico no mercado.
+                        </p>
+                        <ul class="product-card__features">
+                            <li>Monitoramento de tendências</li>
+                            <li>Análise competitiva</li>
+                            <li>Previsão de demanda</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-secondary product-card__cta">Saiba Mais</a>
+                    </article>
+                    
+                    <!-- Otimização Operacional -->
+                    <article class="product-card card">
+                        <div class="product-card__icon">
+                            <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Otimização Operacional" class="product-card__icon-img">
+                        </div>
+                        <h3 class="product-card__title">Otimização Operacional</h3>
+                        <p class="product-card__description">
+                            Análise de eficiência operacional, identificação de gargalos e otimização de 
+                            recursos para máxima produtividade.
+                        </p>
+                        <ul class="product-card__features">
+                            <li>Análise de eficiência</li>
+                            <li>Identificação de gargalos</li>
+                            <li>Otimização de recursos</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-secondary product-card__cta">Saiba Mais</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resultados Section -->
+        <section class="benefits-section" id="resultados">
+            <div class="container">
+                <h2 class="section-title">Resultados Comprovados</h2>
+                <p class="section-subtitle">
+                    Veja os resultados que nossos clientes alcançaram com nossas soluções de análise de dados
+                </p>
+                
+                <div class="benefits-grid grid grid-2">
+                    <!-- Resultado 1 -->
+                    <article class="benefit-card card">
+                        <div class="benefit-card__icon" aria-hidden="true">🏭</div>
+                        <h3 class="benefit-card__title">Indústria Manufatureira</h3>
+                        <p class="benefit-card__description">
+                            <strong>+40% em eficiência operacional</strong> através da análise preditiva de 
+                            manutenção e otimização de processos. Redução de 30% nos custos operacionais.
+                        </p>
+                    </article>
+                    
+                    <!-- Resultado 2 -->
+                    <article class="benefit-card card">
+                        <div class="benefit-card__icon" aria-hidden="true">🛒</div>
+                        <h3 class="benefit-card__title">Varejo Online</h3>
+                        <p class="benefit-card__description">
+                            <strong>+65% em vendas</strong> com análise de comportamento do cliente e 
+                            personalização de ofertas. Aumento de 45% na taxa de conversão.
+                        </p>
+                    </article>
+                    
+                    <!-- Resultado 3 -->
+                    <article class="benefit-card card">
+                        <div class="benefit-card__icon" aria-hidden="true">🏦</div>
+                        <h3 class="benefit-card__title">Setor Financeiro</h3>
+                        <p class="benefit-card__description">
+                            <strong>+80% na detecção de fraudes</strong> com modelos preditivos avançados. 
+                            Redução de 50% em perdas financeiras por atividades fraudulentas.
+                        </p>
+                    </article>
+                    
+                    <!-- Resultado 4 -->
+                    <article class="benefit-card card">
+                        <div class="benefit-card__icon" aria-hidden="true">🚚</div>
+                        <h3 class="benefit-card__title">Logística</h3>
+                        <p class="benefit-card__description">
+                            <strong>+35% em otimização de rotas</strong> através da análise de dados de tráfego 
+                            e previsão de demanda. Redução de 25% nos custos de transporte.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="contact-section" id="contato">
+            <div class="container">
+                <h2 class="section-title">Não Deixe Seus Dados Parados</h2>
+                <p class="section-subtitle">
+                    Transforme-os em sua maior vantagem competitiva. Entre em contato e descubra como a IA pode revelar os insights que você precisa
+                </p>
+                
+                <div class="contact-content grid grid-2">
+                    <!-- Contact Form -->
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="name" class="form-label">Nome Completo *</label>
+                                <input type="text" id="name" name="name" class="form-input" required aria-describedby="name-error">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">E-mail *</label>
+                                <input type="email" id="email" name="email" class="form-input" required aria-describedby="email-error">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company" class="form-label">Empresa</label>
+                                <input type="text" id="company" name="company" class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Tipo de Análise *</label>
+                                <select id="subject" name="subject" class="form-input" required aria-describedby="subject-error">
+                                    <option value="">Selecione o tipo de análise</option>
+                                    <option value="business-intelligence">Business Intelligence</option>
+                                    <option value="analise-preditiva">Análise Preditiva</option>
+                                    <option value="visualizacao-dados">Visualização de Dados</option>
+                                    <option value="otimizacao-processos">Otimização de Processos</option>
+                                    <option value="analise-mercado">Análise de Mercado</option>
+                                    <option value="deteccao-padroes">Detecção de Padrões</option>
+                                    <option value="solucao-completa">Solução Completa</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Descreva seus dados e objetivos de análise *</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="5" 
+                                    placeholder="Conte-nos sobre os tipos de dados que você possui, quais insights busca e como podemos ajudar..." required aria-describedby="message-error"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary contact-form__submit-button">
+                                Solicitar Análise Gratuita
+                            </button>
+                        </form>
+                        
+                        <!-- Form Success Message -->
+                        <div class="form-success-message hidden" id="form-success" role="alert">
+                            <h3>✅ Solicitação Enviada com Sucesso!</h3>
+                            <p>Nossa equipe de cientistas de dados entrará em contato em até 24 horas para agendar sua análise gratuita.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Information -->
+                    <div class="contact-info card">
+                        <h3 class="contact-info__title">Análise Gratuita de Dados</h3>
+                        
+                        <div class="contact-info__item">
+                            <div class="contact-info__icon" aria-hidden="true">🔍</div>
+                            <div class="contact-info__content">
+                                <span class="contact-info__label">Auditoria de Dados</span>
+                                <span class="contact-info__value">Avaliação completa da qualidade e potencial dos seus dados</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info__item">
+                            <div class="contact-info__icon" aria-hidden="true">📊</div>
+                            <div class="contact-info__content">
+                                <span class="contact-info__label">Demonstração Prática</span>
+                                <span class="contact-info__value">Visualização de insights preliminares dos seus dados</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info__item">
+                            <div class="contact-info__icon" aria-hidden="true">💰</div>
+                            <div class="contact-info__content">
+                                <span class="contact-info__label">Cálculo de ROI</span>
+                                <span class="contact-info__value">Projeção do retorno sobre investimento em análise de dados</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info__item">
+                            <div class="contact-info__icon" aria-hidden="true">🚀</div>
+                            <div class="contact-info__content">
+                                <span class="contact-info__label">Roadmap Personalizado</span>
+                                <span class="contact-info__value">Plano de implementação adaptado aos seus objetivos</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Details -->
+                        <div style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border);">
+                            <div class="contact-info__item">
+                                <div class="contact-info__icon" aria-hidden="true">📧</div>
+                                <div class="contact-info__content">
+                                    <span class="contact-info__label">E-mail</span>
+                                    <a href="mailto:dados@vendramico.com" class="contact-info__value">dados@vendramico.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info__item">
+                                <div class="contact-info__icon" aria-hidden="true">📱</div>
+                                <div class="contact-info__content">
+                                    <span class="contact-info__label">WhatsApp</span>
+                                    <a href="https://wa.me/5511999999999" class="contact-info__value">+55 (11) 9999-9999</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-columns grid grid-4">
+                <!-- About Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column__title">Sobre a Vendrâmico</h4>
+                    <p class="footer-column__text">
+                        Especializados em personalizar modelos de IA existentes para criar soluções 
+                        inteligentes sob medida para seu negócio.
+                    </p>
+                    <div class="footer__logo">
+                        <div class="footer__logo-icon">🤖</div>
+                        <span class="footer__logo-text">Vendrâmico</span>
+                    </div>
+                </div>
+                
+                <!-- Quick Links Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column__title">Links Rápidos</h4>
+                    <ul class="footer-column__list">
+                        <li><a href="index.html#produtos" class="footer-column__link">Produtos</a></li>
+                        <li><a href="index.html#como-funciona" class="footer-column__link">Como Funciona</a></li>
+                        <li><a href="index.html#beneficios" class="footer-column__link">Benefícios</a></li>
+                        <li><a href="index.html#contato" class="footer-column__link">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column__title">Soluções de IA</h4>
+                    <ul class="footer-column__list">
+                        <li><a href="ia-atendimento.html" class="footer-column__link">IA de Atendimento</a></li>
+                        <li><a href="ia-vendas.html" class="footer-column__link">IA de Vendas</a></li>
+                        <li><a href="assistente-virtual.html" class="footer-column__link">Assistente Virtual</a></li>
+                        <li><a href="analise-dados.html" class="footer-column__link">Análise de Dados</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column__title">Suporte</h4>
+                    <ul class="footer-column__list">
+                        <li><a href="#contato" class="footer-column__link">Central de Ajuda</a></li>
+                        <li><a href="#contato" class="footer-column__link">Documentação</a></li>
+                        <li><a href="#contato" class="footer-column__link">Política de Privacidade</a></li>
+                        <li><a href="#contato" class="footer-column__link">Termos de Uso</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <p class="footer__copyright">
+                        © 2024 Vendrâmico. Todos os direitos reservados.
+                    </p>
+                    <div class="footer__social-links">
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn" rel="noopener noreferrer">💼</a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter" rel="noopener noreferrer">🐦</a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram" rel="noopener noreferrer">📷</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+        ↑
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
