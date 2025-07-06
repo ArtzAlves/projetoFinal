@@ -31,6 +31,7 @@ const Utils = {
 
     // Smooth scroll para elementos
     smoothScrollTo(element, offset = CONFIG.scrollOffset) {
+        if (!element) return;
         const elementPosition = element.offsetTop - offset;
         window.scrollTo({
             top: elementPosition,
@@ -68,6 +69,8 @@ const Utils = {
 
     // Animar contador
     animateCounter(element, start, end, duration) {
+        if (!element) return;
+        
         const startTime = performance.now();
         const range = end - start;
 
@@ -107,7 +110,17 @@ class Navigation {
 
     setupEventListeners() {
         // Mobile menu toggle
-        this.mobileToggle?.addEventListener('click', () => this.toggleMobileMenu());
+        if (this.mobileToggle) {
+            this.mobileToggle.addEventListener('click', () => this.toggleMobileMenu());
+            
+            // Keyboard support for mobile toggle
+            this.mobileToggle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.toggleMobileMenu();
+                }
+            });
+        }
         
         // Close mobile menu when clicking nav links
         this.navLinks.forEach(link => {
@@ -129,12 +142,26 @@ class Navigation {
                 this.toggleMobileMenu();
             }
         });
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isMenuOpen) {
+                this.toggleMobileMenu();
+            }
+        });
     }
 
     toggleMobileMenu() {
         this.isMenuOpen = !this.isMenuOpen;
-        this.mobileToggle?.classList.toggle('active');
-        this.navMenu?.classList.toggle('active');
+        
+        if (this.mobileToggle) {
+            this.mobileToggle.classList.toggle('active');
+            this.mobileToggle.setAttribute('aria-expanded', this.isMenuOpen);
+        }
+        
+        if (this.navMenu) {
+            this.navMenu.classList.toggle('active');
+        }
         
         // Prevent body scroll when menu is open
         document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
@@ -144,10 +171,12 @@ class Navigation {
         const scrollY = window.scrollY;
         
         // Add sticky class to header
-        if (scrollY > 50) {
-            this.header?.classList.add('sticky');
-        } else {
-            this.header?.classList.remove('sticky');
+        if (this.header) {
+            if (scrollY > 50) {
+                this.header.classList.add('sticky');
+            } else {
+                this.header.classList.remove('sticky');
+            }
         }
     }
 
@@ -168,6 +197,8 @@ class Navigation {
     setupActiveSection() {
         const sections = document.querySelectorAll('section[id]');
         
+        if (sections.length === 0) return;
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -208,6 +239,8 @@ class ScrollAnimations {
     }
 
     setupIntersectionObserver() {
+        if (this.animatedElements.length === 0) return;
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -228,7 +261,7 @@ class ScrollAnimations {
     setupCounterAnimation() {
         const statsSection = document.querySelector('.hero-section__stats');
         
-        if (!statsSection) return;
+        if (!statsSection || this.counters.length === 0) return;
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -249,8 +282,10 @@ class ScrollAnimations {
             const number = parseInt(text.replace(/\D/g, ''));
             const suffix = text.replace(/\d/g, '');
             
-            counter.dataset.suffix = suffix;
-            Utils.animateCounter(counter, 0, number, 2000);
+            if (!isNaN(number)) {
+                counter.dataset.suffix = suffix;
+                Utils.animateCounter(counter, 0, number, 2000);
+            }
         });
     }
 }
@@ -367,6 +402,7 @@ class ContactForm {
         if (!errorElement) {
             errorElement = document.createElement('span');
             errorElement.className = 'field-error';
+            errorElement.setAttribute('role', 'alert');
             field.parentNode.appendChild(errorElement);
         }
         
@@ -382,6 +418,8 @@ class ContactForm {
     }
 
     setLoadingState(loading) {
+        if (!this.submitButton) return;
+
         if (loading) {
             this.submitButton.textContent = 'Enviando...';
             this.submitButton.disabled = true;
@@ -431,11 +469,13 @@ class ContactForm {
     }
 
     showSuccessMessage() {
-        this.form.style.display = 'none';
-        this.successMessage.classList.remove('hidden');
-        
-        // Clear saved form data
-        localStorage.removeItem(CONFIG.storageKeys.contactForm);
+        if (this.form && this.successMessage) {
+            this.form.style.display = 'none';
+            this.successMessage.classList.remove('hidden');
+            
+            // Clear saved form data
+            localStorage.removeItem(CONFIG.storageKeys.contactForm);
+        }
     }
 
     showErrorMessage(message) {
@@ -444,14 +484,17 @@ class ContactForm {
         if (!errorDiv) {
             errorDiv = document.createElement('div');
             errorDiv.className = 'form-error-message';
+            errorDiv.setAttribute('role', 'alert');
             this.form.insertBefore(errorDiv, this.submitButton);
         }
         
-        errorDiv.innerHTML = `<p style="color: #ff4444; text-align: center; margin: 1rem 0;">${message}</p>`;
+        errorDiv.innerHTML = `<p>${message}</p>`;
         
         // Remove error message after 5 seconds
         setTimeout(() => {
-            errorDiv.remove();
+            if (errorDiv.parentNode) {
+                errorDiv.remove();
+            }
         }, 5000);
     }
 
@@ -511,7 +554,6 @@ class VisualEffects {
     init() {
         this.setupHoverEffects();
         this.setupParallaxEffect();
-        this.setupTypingEffect();
     }
 
     setupHoverEffects() {
@@ -534,33 +576,16 @@ class VisualEffects {
         
         if (!heroSection) return;
 
+        // Check if user prefers reduced motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) return;
+
         window.addEventListener('scroll', Utils.debounce(() => {
             const scrolled = window.pageYOffset;
             const parallax = scrolled * 0.5;
             
             heroSection.style.transform = `translateY(${parallax}px)`;
         }, 10));
-    }
-
-    setupTypingEffect() {
-        const titleHighlight = document.querySelector('.hero-section__title-highlight');
-        
-        if (!titleHighlight) return;
-
-        const text = titleHighlight.textContent;
-        titleHighlight.textContent = '';
-        
-        let i = 0;
-        const typeWriter = () => {
-            if (i < text.length) {
-                titleHighlight.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        };
-        
-        // Start typing effect after a delay
-        setTimeout(typeWriter, 1000);
     }
 }
 
@@ -580,12 +605,14 @@ class AccessibilityEnhancements {
         // Enhanced keyboard navigation for mobile menu
         const mobileToggle = document.getElementById('mobile-menu-toggle');
         
-        mobileToggle?.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                mobileToggle.click();
-            }
-        });
+        if (mobileToggle) {
+            mobileToggle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    mobileToggle.click();
+                }
+            });
+        }
 
         // Escape key to close mobile menu
         document.addEventListener('keydown', (e) => {
@@ -603,7 +630,7 @@ class AccessibilityEnhancements {
         const navMenu = document.getElementById('nav-menu');
         const focusableElements = navMenu?.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
         
-        if (!focusableElements) return;
+        if (!focusableElements || focusableElements.length === 0) return;
 
         const firstElement = focusableElements[0];
         const lastElement = focusableElements[focusableElements.length - 1];
@@ -695,43 +722,5 @@ class VendramicoApp {
     }
 }
 
-// ===== CSS ADICIONAL PARA ERROS E ESTADOS =====
-const additionalStyles = `
-    .field-error {
-        color: #ff4444;
-        font-size: 0.875rem;
-        margin-top: 0.25rem;
-        display: block;
-    }
-    
-    .form-input.error,
-    .form-textarea.error {
-        border-color: #ff4444;
-        box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.1);
-    }
-    
-    .form-error-message {
-        background: rgba(255, 68, 68, 0.1);
-        border: 1px solid #ff4444;
-        border-radius: var(--border-radius-md);
-        padding: var(--spacing-sm);
-        margin: var(--spacing-sm) 0;
-    }
-    
-    @media (prefers-reduced-motion: reduce) {
-        .fade-in-up,
-        .fade-in {
-            opacity: 1 !important;
-            transform: none !important;
-        }
-    }
-`;
-
-// Inject additional styles
-const styleSheet = document.createElement('style');
-styleSheet.textContent = additionalStyles;
-document.head.appendChild(styleSheet);
-
 // Initialize the application
 const app = new VendramicoApp();
-
