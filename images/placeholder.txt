@@ -1,0 +1,2 @@
+# Pasta de imagens
+# As imagens serão referenciadas via URLs do Pexels conforme o código original
