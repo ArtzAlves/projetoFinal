@@ -281,6 +281,12 @@ class ScrollAnimations {
 
     animateCounters() {
         this.counters.forEach(counter => {
+            // Verificar se o contador deve ser animado
+            if (counter.dataset.noAnimation === 'true') {
+                // Não animar este contador, manter o texto original
+                return;
+            }
+            
             const text = counter.textContent;
             const number = parseInt(text.replace(/\D/g, ''));
             const suffix = text.replace(/\d/g, '');
