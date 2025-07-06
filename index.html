@@ -10,21 +10,20 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Vendrâmico - Soluções de IA Personalizadas">
     <meta property="og:description" content="Transforme seu negócio com soluções de IA personalizadas. Especialistas em customizar modelos de inteligência artificial para suas necessidades específicas.">
-    <meta property="og:image" content="images/vendramico-logo.png">
+    <meta property="og:image" content="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200">
     <meta property="og:type" content="website">
     
     <title>Vendrâmico - Soluções de IA Personalizadas</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="apple-touch-icon" href="images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
     
     <!-- Performance Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Header/Navigation -->
@@ -32,10 +31,10 @@
         <div class="container">
             <div class="header__content">
                 <!-- Logo -->
-                <div class="header__logo">
-                    <img src="images/vendramico-logo.png" alt="Vendrâmico Logo" class="header__logo-img">
+                <a href="#hero" class="header__logo">
+                    <div class="header__logo-icon">🤖</div>
                     <span class="header__logo-text">Vendrâmico</span>
-                </div>
+                </a>
                 
                 <!-- Desktop Navigation -->
                 <nav class="header__nav" id="nav-menu">
@@ -61,11 +60,11 @@
                 </div>
                 
                 <!-- Mobile Menu Toggle -->
-                <div class="header__mobile-menu-toggle" id="mobile-menu-toggle">
+                <button class="header__mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
                     <span class="header__hamburger-line"></span>
                     <span class="header__hamburger-line"></span>
                     <span class="header__hamburger-line"></span>
-                </div>
+                </button>
             </div>
         </div>
     </header>
@@ -94,7 +93,7 @@
                     <!-- Social Proof Stats -->
                     <div class="hero-section__stats">
                         <div class="hero-section__stat-card">
-                            <div class="stat-card__icon">🤖</div>
+                            <div class="stat-card__icon" aria-hidden="true">🤖</div>
                             <div class="stat-card__content">
                                 <span class="stat-card__number">150+</span>
                                 <span class="stat-card__label">Soluções de IA Desenvolvidas</span>
@@ -102,7 +101,7 @@
                         </div>
                         
                         <div class="hero-section__stat-card">
-                            <div class="stat-card__icon">🏢</div>
+                            <div class="stat-card__icon" aria-hidden="true">🏢</div>
                             <div class="stat-card__content">
                                 <span class="stat-card__number">80+</span>
                                 <span class="stat-card__label">Clientes Satisfeitos</span>
@@ -110,7 +109,7 @@
                         </div>
                         
                         <div class="hero-section__stat-card">
-                            <div class="stat-card__icon">⚡</div>
+                            <div class="stat-card__icon" aria-hidden="true">⚡</div>
                             <div class="stat-card__content">
                                 <span class="stat-card__number">95%</span>
                                 <span class="stat-card__label">Redução de Tempo em Processos</span>
@@ -133,7 +132,7 @@
                     <!-- IA de Atendimento ao Cliente -->
                     <article class="product-card card">
                         <div class="product-card__icon">
-                            <img src="images/ai-icons-set.jpg" alt="IA Atendimento" class="product-card__icon-img">
+                            <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400" alt="IA Atendimento" class="product-card__icon-img">
                         </div>
                         <h3 class="product-card__title">IA de Atendimento ao Cliente</h3>
                         <p class="product-card__description">
@@ -151,7 +150,7 @@
                     <!-- IA de Vendas -->
                     <article class="product-card card">
                         <div class="product-card__icon">
-                            <img src="images/startup-icon.png" alt="IA Vendas" class="product-card__icon-img">
+                            <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400" alt="IA Vendas" class="product-card__icon-img">
                         </div>
                         <h3 class="product-card__title">IA de Vendas e Marketing</h3>
                         <p class="product-card__description">
@@ -169,7 +168,7 @@
                     <!-- Assistente Virtual Especializado -->
                     <article class="product-card card">
                         <div class="product-card__icon">
-                            <img src="images/ai-brain-icon.jpg" alt="Assistente Virtual" class="product-card__icon-img">
+                            <img src="https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Assistente Virtual" class="product-card__icon-img">
                         </div>
                         <h3 class="product-card__title">Assistente Virtual Especializado</h3>
                         <p class="product-card__description">
@@ -187,7 +186,7 @@
                     <!-- IA de Análise de Dados -->
                     <article class="product-card card">
                         <div class="product-card__icon">
-                            <img src="images/digital-transformation-icon.png" alt="IA Análise" class="product-card__icon-img">
+                            <img src="https://images.pexels.com/photos/8386422/pexels-photo-8386422.jpeg?auto=compress&cs=tinysrgb&w=400" alt="IA Análise" class="product-card__icon-img">
                         </div>
                         <h3 class="product-card__title">IA de Análise de Dados</h3>
                         <p class="product-card__description">
@@ -216,7 +215,7 @@
                 <div class="steps-grid grid grid-4">
                     <!-- Step 1 -->
                     <div class="step-card">
-                        <span class="step-card__number">1</span>
+                        <span class="step-card__number" aria-label="Passo 1">1</span>
                         <h3 class="step-card__title">Análise das Necessidades</h3>
                         <p class="step-card__description">
                             Analisamos profundamente seu negócio, processos atuais e objetivos para identificar 
@@ -226,7 +225,7 @@
                     
                     <!-- Step 2 -->
                     <div class="step-card">
-                        <span class="step-card__number">2</span>
+                        <span class="step-card__number" aria-label="Passo 2">2</span>
                         <h3 class="step-card__title">Seleção e Personalização</h3>
                         <p class="step-card__description">
                             Escolhemos os modelos de IA mais adequados e os personalizamos especificamente 
@@ -236,7 +235,7 @@
                     
                     <!-- Step 3 -->
                     <div class="step-card">
-                        <span class="step-card__number">3</span>
+                        <span class="step-card__number" aria-label="Passo 3">3</span>
                         <h3 class="step-card__title">Implementação e Integração</h3>
                         <p class="step-card__description">
                             Implementamos a solução em seu ambiente, integrando com seus sistemas existentes 
@@ -246,7 +245,7 @@
                     
                     <!-- Step 4 -->
                     <div class="step-card">
-                        <span class="step-card__number">4</span>
+                        <span class="step-card__number" aria-label="Passo 4">4</span>
                         <h3 class="step-card__title">Monitoramento e Otimização</h3>
                         <p class="step-card__description">
                             Acompanhamos o desempenho da solução e realizamos ajustes contínuos para 
@@ -268,7 +267,7 @@
                 <div class="benefits-grid grid grid-3">
                     <!-- Benefit 1 -->
                     <div class="benefit-card card">
-                        <div class="benefit-card__icon">🕒</div>
+                        <div class="benefit-card__icon" aria-hidden="true">🕒</div>
                         <h3 class="benefit-card__title">Disponibilidade 24/7</h3>
                         <p class="benefit-card__description">
                             Nossas soluções de IA trabalham ininterruptamente, garantindo que seu negócio 
@@ -278,7 +277,7 @@
                     
                     <!-- Benefit 2 -->
                     <div class="benefit-card card">
-                        <div class="benefit-card__icon">💰</div>
+                        <div class="benefit-card__icon" aria-hidden="true">💰</div>
                         <h3 class="benefit-card__title">Redução de Custos</h3>
                         <p class="benefit-card__description">
                             Automatize processos repetitivos e reduza custos operacionais significativamente, 
@@ -288,7 +287,7 @@
                     
                     <!-- Benefit 3 -->
                     <div class="benefit-card card">
-                        <div class="benefit-card__icon">🎯</div>
+                        <div class="benefit-card__icon" aria-hidden="true">🎯</div>
                         <h3 class="benefit-card__title">Personalização Avançada</h3>
                         <p class="benefit-card__description">
                             Cada solução é única e desenvolvida especificamente para seu negócio, 
@@ -298,7 +297,7 @@
                     
                     <!-- Benefit 4 -->
                     <div class="benefit-card card">
-                        <div class="benefit-card__icon">📈</div>
+                        <div class="benefit-card__icon" aria-hidden="true">📈</div>
                         <h3 class="benefit-card__title">Escalabilidade</h3>
                         <p class="benefit-card__description">
                             Nossas soluções crescem junto com seu negócio, adaptando-se automaticamente 
@@ -308,7 +307,7 @@
                     
                     <!-- Benefit 5 -->
                     <div class="benefit-card card">
-                        <div class="benefit-card__icon">🔒</div>
+                        <div class="benefit-card__icon" aria-hidden="true">🔒</div>
                         <h3 class="benefit-card__title">Segurança de Dados</h3>
                         <p class="benefit-card__description">
                             Implementamos as mais altas práticas de segurança para proteger seus dados 
@@ -318,7 +317,7 @@
                     
                     <!-- Benefit 6 -->
                     <div class="benefit-card card">
-                        <div class="benefit-card__icon">🔗</div>
+                        <div class="benefit-card__icon" aria-hidden="true">🔗</div>
                         <h3 class="benefit-card__title">Integração Simples</h3>
                         <p class="benefit-card__description">
                             Nossas soluções se integram facilmente com seus sistemas existentes, 
@@ -340,15 +339,15 @@
                 <div class="contact-content grid grid-2">
                     <!-- Contact Form -->
                     <div class="contact-form-wrapper">
-                        <form class="contact-form" id="contact-form">
+                        <form class="contact-form" id="contact-form" novalidate>
                             <div class="form-group">
-                                <label for="name" class="form-label">Nome Completo</label>
-                                <input type="text" id="name" name="name" class="form-input" required>
+                                <label for="name" class="form-label">Nome Completo *</label>
+                                <input type="text" id="name" name="name" class="form-input" required aria-describedby="name-error">
                             </div>
                             
                             <div class="form-group">
-                                <label for="email" class="form-label">E-mail</label>
-                                <input type="email" id="email" name="email" class="form-input" required>
+                                <label for="email" class="form-label">E-mail *</label>
+                                <input type="email" id="email" name="email" class="form-input" required aria-describedby="email-error">
                             </div>
                             
                             <div class="form-group">
@@ -357,14 +356,14 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="subject" class="form-label">Assunto</label>
-                                <input type="text" id="subject" name="subject" class="form-input" required>
+                                <label for="subject" class="form-label">Assunto *</label>
+                                <input type="text" id="subject" name="subject" class="form-input" required aria-describedby="subject-error">
                             </div>
                             
                             <div class="form-group">
-                                <label for="message" class="form-label">Mensagem</label>
+                                <label for="message" class="form-label">Mensagem *</label>
                                 <textarea id="message" name="message" class="form-textarea" rows="5" 
-                                    placeholder="Conte-nos sobre seu projeto e como podemos ajudar..." required></textarea>
+                                    placeholder="Conte-nos sobre seu projeto e como podemos ajudar..." required aria-describedby="message-error"></textarea>
                             </div>
                             
                             <button type="submit" class="btn btn-primary contact-form__submit-button">
@@ -373,7 +372,7 @@
                         </form>
                         
                         <!-- Form Success Message -->
-                        <div class="form-success-message hidden" id="form-success">
+                        <div class="form-success-message hidden" id="form-success" role="alert">
                             <h3>✅ Mensagem Enviada com Sucesso!</h3>
                             <p>Obrigado pelo seu interesse. Entraremos em contato em breve.</p>
                         </div>
@@ -384,23 +383,23 @@
                         <h3 class="contact-info__title">Informações de Contato</h3>
                         
                         <div class="contact-info__item">
-                            <div class="contact-info__icon">📧</div>
+                            <div class="contact-info__icon" aria-hidden="true">📧</div>
                             <div class="contact-info__content">
                                 <span class="contact-info__label">E-mail</span>
-                                <span class="contact-info__value">contato@vendramico.com</span>
+                                <a href="mailto:contato@vendramico.com" class="contact-info__value">contato@vendramico.com</a>
                             </div>
                         </div>
                         
                         <div class="contact-info__item">
-                            <div class="contact-info__icon">📱</div>
+                            <div class="contact-info__icon" aria-hidden="true">📱</div>
                             <div class="contact-info__content">
                                 <span class="contact-info__label">Telefone</span>
-                                <span class="contact-info__value">+55 (11) 9999-9999</span>
+                                <a href="tel:+5511999999999" class="contact-info__value">+55 (11) 9999-9999</a>
                             </div>
                         </div>
                         
                         <div class="contact-info__item">
-                            <div class="contact-info__icon">📍</div>
+                            <div class="contact-info__icon" aria-hidden="true">📍</div>
                             <div class="contact-info__content">
                                 <span class="contact-info__label">Endereço</span>
                                 <span class="contact-info__value">São Paulo, SP - Brasil</span>
@@ -408,7 +407,7 @@
                         </div>
                         
                         <div class="contact-info__item">
-                            <div class="contact-info__icon">⏰</div>
+                            <div class="contact-info__icon" aria-hidden="true">⏰</div>
                             <div class="contact-info__content">
                                 <span class="contact-info__label">Horário de Atendimento</span>
                                 <span class="contact-info__value">Segunda a Sexta, 9h às 18h</span>
@@ -419,10 +418,10 @@
                         <div class="social-links">
                             <h4 class="social-links__title">Siga-nos</h4>
                             <div class="social-links__list">
-                                <a href="#" class="social-links__item" aria-label="LinkedIn">💼</a>
-                                <a href="#" class="social-links__item" aria-label="Twitter">🐦</a>
-                                <a href="#" class="social-links__item" aria-label="Instagram">📷</a>
-                                <a href="#" class="social-links__item" aria-label="YouTube">📺</a>
+                                <a href="#" class="social-links__item" aria-label="LinkedIn" rel="noopener noreferrer">💼</a>
+                                <a href="#" class="social-links__item" aria-label="Twitter" rel="noopener noreferrer">🐦</a>
+                                <a href="#" class="social-links__item" aria-label="Instagram" rel="noopener noreferrer">📷</a>
+                                <a href="#" class="social-links__item" aria-label="YouTube" rel="noopener noreferrer">📺</a>
                             </div>
                         </div>
                     </div>
@@ -443,7 +442,8 @@
                         inteligentes sob medida para seu negócio.
                     </p>
                     <div class="footer__logo">
-                        <img src="images/vendramico-logo.png" alt="Vendrâmico" class="footer__logo-img">
+                        <div class="footer__logo-icon">🤖</div>
+                        <span class="footer__logo-text">Vendrâmico</span>
                     </div>
                 </div>
                 
@@ -462,10 +462,10 @@
                 <div class="footer-column">
                     <h4 class="footer-column__title">Serviços</h4>
                     <ul class="footer-column__list">
-                        <li><a href="#" class="footer-column__link">IA de Atendimento</a></li>
-                        <li><a href="#" class="footer-column__link">IA de Vendas</a></li>
-                        <li><a href="#" class="footer-column__link">Assistente Virtual</a></li>
-                        <li><a href="#" class="footer-column__link">Análise de Dados</a></li>
+                        <li><a href="#produtos" class="footer-column__link">IA de Atendimento</a></li>
+                        <li><a href="#produtos" class="footer-column__link">IA de Vendas</a></li>
+                        <li><a href="#produtos" class="footer-column__link">Assistente Virtual</a></li>
+                        <li><a href="#produtos" class="footer-column__link">Análise de Dados</a></li>
                     </ul>
                 </div>
                 
@@ -473,10 +473,10 @@
                 <div class="footer-column">
                     <h4 class="footer-column__title">Suporte</h4>
                     <ul class="footer-column__list">
-                        <li><a href="#" class="footer-column__link">Central de Ajuda</a></li>
-                        <li><a href="#" class="footer-column__link">Documentação</a></li>
-                        <li><a href="#" class="footer-column__link">Política de Privacidade</a></li>
-                        <li><a href="#" class="footer-column__link">Termos de Uso</a></li>
+                        <li><a href="#contato" class="footer-column__link">Central de Ajuda</a></li>
+                        <li><a href="#contato" class="footer-column__link">Documentação</a></li>
+                        <li><a href="#contato" class="footer-column__link">Política de Privacidade</a></li>
+                        <li><a href="#contato" class="footer-column__link">Termos de Uso</a></li>
                     </ul>
                 </div>
             </div>
@@ -488,9 +488,9 @@
                         © 2024 Vendrâmico. Todos os direitos reservados.
                     </p>
                     <div class="footer__social-links">
-                        <a href="#" class="footer__social-link" aria-label="LinkedIn">💼</a>
-                        <a href="#" class="footer__social-link" aria-label="Twitter">🐦</a>
-                        <a href="#" class="footer__social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn" rel="noopener noreferrer">💼</a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter" rel="noopener noreferrer">🐦</a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram" rel="noopener noreferrer">📷</a>
                     </div>
                 </div>
             </div>
@@ -503,7 +503,6 @@
     </button>
 
     <!-- JavaScript -->
-    <script src="js/script.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
-
