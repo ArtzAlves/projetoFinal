@@ -234,6 +234,9 @@ class ScrollAnimations {
     }
 
     init() {
+        // Marcar que JavaScript está disponível
+        document.documentElement.classList.add('js-enabled');
+        
         this.setupIntersectionObserver();
         this.setupCounterAnimation();
     }
@@ -553,7 +556,7 @@ class VisualEffects {
 
     init() {
         this.setupHoverEffects();
-        this.setupParallaxEffect();
+        // Removido parallax que pode causar problemas de performance
     }
 
     setupHoverEffects() {
@@ -569,23 +572,6 @@ class VisualEffects {
                 card.style.transform = 'translateY(0) scale(1)';
             });
         });
-    }
-
-    setupParallaxEffect() {
-        const heroSection = document.querySelector('.hero-section');
-        
-        if (!heroSection) return;
-
-        // Check if user prefers reduced motion
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (prefersReducedMotion) return;
-
-        window.addEventListener('scroll', Utils.debounce(() => {
-            const scrolled = window.pageYOffset;
-            const parallax = scrolled * 0.5;
-            
-            heroSection.style.transform = `translateY(${parallax}px)`;
-        }, 10));
     }
 }
 
@@ -692,33 +678,11 @@ class VendramicoApp {
             
             console.log('Vendrâmico website initialized successfully');
             
-            // Add initial animations
-            this.addInitialAnimations();
+            // Não adicionar animações automáticas que podem causar problemas
             
         } catch (error) {
             console.error('Error initializing Vendrâmico website:', error);
         }
-    }
-
-    addInitialAnimations() {
-        // Add fade-in-up class to elements that should animate
-        const elementsToAnimate = [
-            '.hero-section__content > *',
-            '.section-title',
-            '.section-subtitle',
-            '.product-card',
-            '.step-card',
-            '.benefit-card',
-            '.contact-form',
-            '.contact-info'
-        ];
-
-        elementsToAnimate.forEach(selector => {
-            document.querySelectorAll(selector).forEach((element, index) => {
-                element.classList.add('fade-in-up');
-                element.style.animationDelay = `${index * 0.1}s`;
-            });
-        });
     }
 }
 

@@ -350,7 +350,7 @@ ul, ol {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-/* Animações */
+/* Animações - CORRIGIDAS */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -380,6 +380,7 @@ ul, ol {
   }
 }
 
+/* Classes de animação - CORRIGIDAS para garantir visibilidade */
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out;
 }
@@ -392,24 +393,29 @@ ul, ol {
   animation: pulse 2s infinite;
 }
 
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(30px);
+/* CORREÇÃO PRINCIPAL: Elementos visíveis por padrão */
+.fade-in-up,
+.fade-in {
+  opacity: 1; /* Visível por padrão */
+  transform: translateY(0); /* Posição normal por padrão */
   transition: all 0.6s ease-out;
 }
 
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fade-in {
+/* Apenas esconde se JavaScript estiver disponível */
+.js-enabled .fade-in-up {
   opacity: 0;
-  transition: opacity 0.6s ease-out;
+  transform: translateY(30px);
 }
 
+.js-enabled .fade-in {
+  opacity: 0;
+}
+
+/* Mostra quando visível */
+.fade-in-up.visible,
 .fade-in.visible {
   opacity: 1;
+  transform: translateY(0);
 }
 
 /* Utilitários */
