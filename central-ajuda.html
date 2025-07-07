@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Central de Ajuda Vendrâmico - Encontre respostas rápidas e suporte completo para nossas soluções de IA personalizadas. FAQ, guias e suporte técnico especializado.">
+    <meta name="keywords" content="central de ajuda, suporte, FAQ, guias, IA personalizada, Vendrâmico, suporte técnico">
+    <meta name="author" content="Vendrâmico">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Central de Ajuda - Vendrâmico">
+    <meta property="og:description" content="Central de Ajuda da Vendrâmico. Encontre respostas rápidas, guias e suporte completo para nossas soluções de IA personalizadas.">
+    <meta property="og:image" content="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200">
+    <meta property="og:type" content="website">
+    
+    <title>Central de Ajuda - Vendrâmico</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Estilos específicos para página de central de ajuda -->
+    <style>
+        .help-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .help-section {
+            margin-bottom: var(--spacing-xxl);
+        }
+        
+        .help-section h2 {
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--color-primary);
+            text-align: center;
+        }
+        
+        .faq-container {
+            display: grid;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .faq-item {
+            background: var(--color-card-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+        }
+        
+        .faq-item:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+        
+        .faq-question {
+            background: var(--color-light-background);
+            padding: var(--spacing-lg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-family: var(--font-heading);
+            font-size: var(--font-size-h5);
+            font-weight: 600;
+            color: var(--color-text-light);
+            transition: all var(--transition-fast);
+        }
+        
+        .faq-question:hover {
+            background: var(--color-primary);
+        }
+        
+        .faq-question:focus {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+        
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            transition: transform var(--transition-fast);
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 var(--spacing-lg);
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-normal);
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: var(--spacing-lg);
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-secondary);
+        }
+        
+        .faq-answer ol {
+            margin-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .faq-answer li {
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-text-secondary);
+        }
+        
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .guide-card {
+            background: var(--color-card-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            transition: all var(--transition-normal);
+            cursor: pointer;
+        }
+        
+        .guide-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .guide-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+        
+        .guide-title {
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-sm);
+            font-size: var(--font-size-h4);
+        }
+        
+        .guide-description {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .guide-status {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            background: var(--gradient-accent);
+            color: var(--color-text-dark);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            font-size: var(--font-size-small);
+            font-weight: 600;
+        }
+        
+        .support-contact {
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .support-contact h3 {
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .support-contact p {
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .contact-method {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--color-accent);
+        }
+        
+        .contact-info h4 {
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-xs);
+            font-size: var(--font-size-base);
+        }
+        
+        .contact-info p {
+            margin: 0;
+            font-size: var(--font-size-small);
+        }
+        
+        .contact-info a {
+            color: var(--color-accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumb {
+            background: var(--color-light-background);
+            padding: var(--spacing-md) 0;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .breadcrumb-nav {
+            font-size: var(--font-size-small);
+            color: var(--color-text-secondary);
+        }
+        
+        .breadcrumb-nav a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-nav a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumb-separator {
+            margin: 0 var(--spacing-xs);
+            color: var(--color-text-secondary);
+        }
+        
+        .search-box {
+            background: var(--color-card-background);
+            border: 2px solid var(--color-border);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+        }
+        
+        .search-input {
+            width: 100%;
+            max-width: 500px;
+            padding: var(--spacing-md);
+            border: 2px solid var(--color-border);
+            border-radius: var(--border-radius-md);
+            background: var(--color-light-background);
+            color: var(--color-text-light);
+            font-size: var(--font-size-base);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(0, 255, 127, 0.1);
+        }
+        
+        .search-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            justify-content: center;
+        }
+        
+        .search-tag {
+            background: var(--color-primary);
+            color: var(--color-text-light);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            font-size: var(--font-size-small);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .search-tag:hover {
+            background: var(--color-accent);
+            color: var(--color-text-dark);
+        }
+        
+        @media (max-width: 768px) {
+            .guides-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .faq-question {
+                font-size: var(--font-size-base);
+                padding: var(--spacing-md);
+            }
+            
+            .faq-answer {
+                padding: 0 var(--spacing-md);
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Logo -->
+                <a href="index.html" class="header__logo">
+                    <div class="header__logo-icon">🤖</div>
+                    <span class="header__logo-text">Vendrâmico</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="header__nav" id="nav-menu">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a href="index.html#produtos" class="header__nav-link">Produtos</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="index.html#como-funciona" class="header__nav-link">Como Funciona</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="index.html#beneficios" class="header__nav-link">Benefícios</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="index.html#contato" class="header__nav-link">Contato</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- CTA Button -->
+                <div class="header__cta">
+                    <a href="index.html#contato" class="btn btn-secondary">Começar Agora</a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="header__mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                    <span class="header__hamburger-line"></span>
+                    <span class="header__hamburger-line"></span>
+                    <span class="header__hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Breadcrumb -->
+        <section class="breadcrumb">
+            <div class="container">
+                <nav class="breadcrumb-nav" aria-label="Navegação estrutural">
+                    <a href="index.html">Início</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span>Central de Ajuda</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Hero Section -->
+        <section class="hero-section" style="min-height: 60vh; padding-top: 120px;">
+            <div class="container">
+                <div class="hero-section__content">
+                    <h1 class="hero-section__title">
+                        <span class="hero-section__title-highlight">Central de Ajuda Vendrâmico:</span>
+                        Encontre Respostas Rápidas e Suporte Completo
+                    </h1>
+                    
+                    <p class="hero-section__subtitle">
+                        Bem-vindo à Central de Ajuda da Vendrâmico. Aqui você encontrará recursos, guias e respostas 
+                        para as perguntas mais frequentes sobre nossas soluções de IA personalizadas. Nosso objetivo 
+                        é garantir que você aproveite ao máximo nossas ferramentas, otimizando suas operações e 
+                        impulsionando seus resultados.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="benefits-section" style="padding-top: var(--spacing-xl);">
+            <div class="container">
+                <div class="help-content">
+                    <div class="search-box">
+                        <h3 style="color: var(--color-text-light); margin-bottom: var(--spacing-md);">🔍 Como podemos ajudar você hoje?</h3>
+                        <input type="text" class="search-input" placeholder="Digite sua pergunta ou palavra-chave..." id="help-search">
+                        <div class="search-suggestions">
+                            <span class="search-tag">Integração</span>
+                            <span class="search-tag">Chatbot</span>
+                            <span class="search-tag">IA de Vendas</span>
+                            <span class="search-tag">Suporte Técnico</span>
+                            <span class="search-tag">Personalização</span>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <article class="help-section">
+                        <h2>❓ Perguntas Frequentes (FAQ)</h2>
+                        
+                        <div class="faq-container">
+                            <!-- FAQ 1 -->
+                            <div class="faq-item">
+                                <button class="faq-question" aria-expanded="false">
+                                    <span>O que é a Vendrâmico?</span>
+                                    <span class="faq-icon">▼</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>
+                                        A Vendrâmico é uma empresa especializada em personalizar modelos de Inteligência Artificial 
+                                        existentes para atender às necessidades específicas de cada cliente. Transformamos IAs genéricas 
+                                        em soluções sob medida para automação, vendas, atendimento ao cliente e análise de dados.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 2 -->
+                            <div class="faq-item">
+                                <button class="faq-question" aria-expanded="false">
+                                    <span>Como as soluções de IA da Vendrâmico podem ajudar meu negócio?</span>
+                                    <span class="faq-icon">▼</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>
+                                        Nossas IAs personalizadas podem automatizar tarefas repetitivas, otimizar processos de vendas 
+                                        e marketing, melhorar a experiência do cliente com atendimento 24/7, e fornecer insights 
+                                        valiosos a partir da análise de dados, resultando em maior eficiência e lucratividade.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 3 -->
+                            <div class="faq-item">
+                                <button class="faq-question" aria-expanded="false">
+                                    <span>Qual é o processo de personalização de uma IA?</span>
+                                    <span class="faq-icon">▼</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Nosso processo envolve as seguintes etapas:</p>
+                                    <ol>
+                                        <li><strong>Diagnóstico:</strong> Entendemos suas necessidades e desafios específicos.</li>
+                                        <li><strong>Planejamento:</strong> Definimos os objetivos, escopo e funcionalidades da IA.</li>
+                                        <li><strong>Personalização:</strong> Adaptamos e treinamos o modelo de IA existente com seus dados e requisitos.</li>
+                                        <li><strong>Implementação:</strong> Integramos a solução em seus sistemas.</li>
+                                        <li><strong>Otimização Contínua:</strong> Monitoramos e ajustamos a IA para garantir performance máxima.</li>
+                                    </ol>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 4 -->
+                            <div class="faq-item">
+                                <button class="faq-question" aria-expanded="false">
+                                    <span>Preciso ter conhecimento técnico avançado para usar as IAs da Vendrâmico?</span>
+                                    <span class="faq-icon">▼</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>
+                                        Não! Nossas soluções são projetadas para serem intuitivas e fáceis de usar. Oferecemos 
+                                        treinamento e suporte completo para garantir que sua equipe possa operar e gerenciar 
+                                        a IA sem dificuldades técnicas.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 5 -->
+                            <div class="faq-item">
+                                <button class="faq-question" aria-expanded="false">
+                                    <span>Como posso entrar em contato com o suporte técnico?</span>
+                                    <span class="faq-icon">▼</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>
+                                        Você pode nos contatar através do formulário em nossa página de Contato, por e-mail em 
+                                        <a href="mailto:suporte@vendramico.com">suporte@vendramico.com</a>, ou pelo telefone 
+                                        <a href="tel:+556499999999">+55 (64) 9999-9999</a> durante o horário comercial.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Guides Section -->
+                    <article class="help-section">
+                        <h2>📚 Guias Rápidos</h2>
+                        
+                        <div class="guides-grid">
+                            <!-- Guide 1 -->
+                            <div class="guide-card">
+                                <span class="guide-icon">🤖</span>
+                                <h3 class="guide-title">Guia de Integração de Chatbots</h3>
+                                <p class="guide-description">
+                                    Passo a passo para integrar nossos chatbots personalizados em seu website ou 
+                                    plataforma de mensagens.
+                                </p>
+                                <span class="guide-status">
+                                    <span>📖</span>
+                                    <span>Em Breve</span>
+                                </span>
+                            </div>
+
+                            <!-- Guide 2 -->
+                            <div class="guide-card">
+                                <span class="guide-icon">📈</span>
+                                <h3 class="guide-title">Otimizando sua IA de Vendas</h3>
+                                <p class="guide-description">
+                                    Dicas e estratégias para maximizar o desempenho de sua IA de vendas e marketing.
+                                </p>
+                                <span class="guide-status">
+                                    <span>📖</span>
+                                    <span>Em Breve</span>
+                                </span>
+                            </div>
+
+                            <!-- Guide 3 -->
+                            <div class="guide-card">
+                                <span class="guide-icon">🎯</span>
+                                <h3 class="guide-title">Gerenciando seu Assistente Virtual</h3>
+                                <p class="guide-description">
+                                    Como configurar e personalizar seu assistente virtual para diferentes cenários de uso.
+                                </p>
+                                <span class="guide-status">
+                                    <span>📖</span>
+                                    <span>Em Breve</span>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Support Contact Section -->
+                    <article class="help-section">
+                        <div class="support-contact">
+                            <h2>🆘 Suporte Adicional</h2>
+                            <p>
+                                Se você não encontrou a resposta para sua pergunta aqui, por favor, não hesite em nos contatar. 
+                                Nossa equipe de especialistas está pronta para oferecer suporte personalizado e garantir que 
+                                suas operações com IA sejam um sucesso.
+                            </p>
+                            
+                            <div class="contact-methods">
+                                <div class="contact-method">
+                                    <div class="contact-icon">📧</div>
+                                    <div class="contact-info">
+                                        <h4>E-mail</h4>
+                                        <p><a href="mailto:suporte@vendramico.com">suporte@vendramico.com</a></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-method">
+                                    <div class="contact-icon">📱</div>
+                                    <div class="contact-info">
+                                        <h4>Telefone</h4>
+                                        <p><a href="tel:+556499999999">+55 (64) 9999-9999</a></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-method">
+                                    <div class="contact-icon">⏰</div>
+                                    <div class="contact-info">
+                                        <h4>Horário de Atendimento</h4>
+                                        <p>Segunda a Sexta, das 9h às 18h<br>(Horário de Brasília)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-columns grid grid-4">
+                <!-- About Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column__title">Sobre a Vendrâmico</h4>
+                    <p class="footer-column__text">
+                        Especializados em personalizar modelos de IA existentes para criar soluções 
+                        inteligentes sob medida para seu negócio.
+                    </p>
+                    <div class="footer__logo">
+                        <div class="footer__logo-icon">🤖</div>
+                        <span class="footer__logo-text">Vendrâmico</span>
+                    </div>
+                </div>
+                
+                <!-- Quick Links Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column__title">Links Rápidos</h4>
+                    <ul class="footer-column__list">
+                        <li><a href="index.html#produtos" class="footer-column__link">Produtos</a></li>
+                        <li><a href="index.html#como-funciona" class="footer-column__link">Como Funciona</a></li>
+                        <li><a href="index.html#beneficios" class="footer-column__link">Benefícios</a></li>
+                        <li><a href="index.html#contato" class="footer-column__link">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column__title">Soluções de IA</h4>
+                    <ul class="footer-column__list">
+                        <li><a href="ia-atendimento.html" class="footer-column__link">IA de Atendimento</a></li>
+                        <li><a href="ia-vendas.html" class="footer-column__link">IA de Vendas</a></li>
+                        <li><a href="assistente-virtual.html" class="footer-column__link">Assistente Virtual</a></li>
+                        <li><a href="analise-dados.html" class="footer-column__link">Análise de Dados</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column__title">Suporte</h4>
+                    <ul class="footer-column__list">
+                        <li><a href="central-ajuda.html" class="footer-column__link">Central de Ajuda</a></li>
+                        <li><a href="index.html#contato" class="footer-column__link">Documentação</a></li>
+                        <li><a href="politica-privacidade.html" class="footer-column__link">Política de Privacidade</a></li>
+                        <li><a href="termos-uso.html" class="footer-column__link">Termos de Uso</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <p class="footer__copyright">
+                        © 2024 Vendrâmico. Todos os direitos reservados.
+                    </p>
+                    <div class="footer__social-links">
+                        <a href="https://instagram.com" class="footer__social-link" aria-label="Instagram" rel="noopener noreferrer" target="_blank">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com" class="footer__social-link" aria-label="X (Twitter)" rel="noopener noreferrer" target="_blank">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+        ↑
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    
+    <!-- FAQ Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (isActive) {
+                        item.classList.remove('active');
+                        question.setAttribute('aria-expanded', 'false');
+                    } else {
+                        item.classList.add('active');
+                        question.setAttribute('aria-expanded', 'true');
+                    }
+                });
+                
+                // Keyboard support
+                question.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        question.click();
+                    }
+                });
+            });
+            
+            // Search functionality
+            const searchInput = document.getElementById('help-search');
+            const searchTags = document.querySelectorAll('.search-tag');
+            
+            searchTags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    searchInput.value = tag.textContent;
+                    searchInput.focus();
+                });
+            });
+            
+            // Simple search filter for FAQ
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                
+                faqItems.forEach(item => {
+                    const questionText = item.querySelector('.faq-question span').textContent.toLowerCase();
+                    const answerText = item.querySelector('.faq-answer').textContent.toLowerCase();
+                    
+                    if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = searchTerm ? 'none' : 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
